@@ -11,8 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: true,
-      isLoggedOut: false,
+      isLoggedIn: false,
+      isLoggedOut: true,
       userEmail: "",
       userPassword: "",
     };
@@ -30,7 +30,7 @@ class App extends Component {
     });
   };
 
-// ===================================to sign in user==============================================================
+  // ===================================to sign in user==============================================================
 
   signInHandler = () => {
     let self = this;
@@ -58,7 +58,7 @@ class App extends Component {
       });
   };
 
-// ====================================to signup user=========================================================
+  // ====================================to signup user=========================================================
 
   signUpHandler = () => {
     const { userEmail, userPassword } = this.state;
@@ -92,7 +92,7 @@ class App extends Component {
     });
   };
 
-// =====================================render method================================================================
+  // =====================================render method================================================================
 
   render() {
     const { isLoggedIn, isLoggedOut, userEmail, userPassword } = this.state;
