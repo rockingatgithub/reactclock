@@ -50,7 +50,7 @@ class App extends Component {
             console.log("signed in");
           })
           .catch(function (error) {
-            alert("Invalid user id password");
+            alert("Invalid user id password Or You need to signup");
           });
       })
       .catch(function (error) {
@@ -126,19 +126,21 @@ class App extends Component {
                       value={userPassword}
                     />
                   </Form.Group>
-                  <Button variant="primary" onClick={this.signInHandler}>
-                    Signin
-                  </Button>
-                  <Button variant="primary" onClick={this.signUpHandler}>
-                    Signup
-                  </Button>
-                  <Button
-                    variant="primary"
-                    type="reset"
-                    onClick={this.resetHandler}
-                  >
-                    Reset
-                  </Button>
+                  <Col>
+                    <Button variant="primary" onClick={this.signInHandler}>
+                      Signin
+                    </Button>
+                    <Button variant="primary" onClick={this.signUpHandler}>
+                      Signup
+                    </Button>
+                    <Button
+                      variant="primary"
+                      type="reset"
+                      onClick={this.resetHandler}
+                    >
+                      Reset
+                    </Button>
+                  </Col>
                 </Form>
               </Col>
               <Col></Col>
