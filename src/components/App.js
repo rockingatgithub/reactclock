@@ -1,3 +1,5 @@
+// ===============================this is main app component===================================================
+
 import React, { Component } from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import * as firebase from "firebase";
@@ -28,6 +30,8 @@ class App extends Component {
     });
   };
 
+// ===================================to sign in user==============================================================
+
   signInHandler = () => {
     let self = this;
     const { userEmail, userPassword } = this.state;
@@ -53,6 +57,8 @@ class App extends Component {
         console.log(error);
       });
   };
+
+// ====================================to signup user=========================================================
 
   signUpHandler = () => {
     const { userEmail, userPassword } = this.state;
@@ -85,6 +91,8 @@ class App extends Component {
       userPassword: "",
     });
   };
+
+// =====================================render method================================================================
 
   render() {
     const { isLoggedIn, isLoggedOut, userEmail, userPassword } = this.state;

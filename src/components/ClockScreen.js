@@ -1,3 +1,5 @@
+// ===============================================this is clock sceern component====================================
+
 import React, { Component } from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 
@@ -45,6 +47,8 @@ class ClockScreen extends Component {
       this.validateTime
     );
   };
+
+  // ===========================================validate date and time================================================
 
   validateTime = () => {
     const {
@@ -107,59 +111,88 @@ class ClockScreen extends Component {
     }
   };
 
+  // ==========================================================set time difference for london======================================
+
   setLNDiff = (e) => {
     const { hourTime } = this.state;
     if (e === undefined) {
-      this.setState({
-        lnHourTime: hourTime,
-      });
+      this.setState(
+        {
+          lnHourTime: hourTime,
+        },
+        this.validateTime
+      );
       return;
     }
-    let val = Number(e.target.value);
-    let fval = val + hourTime;
+    let val = e.target.value;
+    // console.log(val + " " + hourTime);
+    let fval = eval(hourTime + val);
 
     if (fval < 0) {
-      let num = 24 + fval;
-      this.setState({
-        lnHourTime: num,
-      });
+      let num = eval(24 + fval);
+      this.setState(
+        {
+          lnHourTime: num,
+        },
+        this.validateTime
+      );
     } else if (fval > 23) {
-      let num = Number(24 + fval);
-      let fnum = Number(num % 24);
-      this.setState({
-        lnHourTime: fnum,
-      });
+      let num = eval(24 + fval);
+      let fnum = eval(num % 24);
+      this.setState(
+        {
+          lnHourTime: fnum,
+        },
+        this.validateTime
+      );
     } else {
-      let num = 24 + fval;
-      this.setState({
-        lnHourTime: num,
-      });
+      let num = eval(24 + fval);
+      this.setState(
+        {
+          lnHourTime: num,
+        },
+        this.validateTime
+      );
     }
   };
+
+  // =======================================================set time difference for india==================================
 
   setINDiff = (e) => {
     const { hourTime } = this.state;
     if (e === undefined) {
-      this.setState({
-        inHourTime: hourTime,
-      });
+      this.setState(
+        {
+          inHourTime: hourTime,
+        },
+        this.validateTime
+      );
       return;
     }
     // console.log(typeof Number(e.target.value));
     let val = e.target.value;
 
-    if (val + hourTime < 0) {
-      this.setState({
-        inHourTime: 24 + (val + hourTime),
-      });
-    } else if (val + hourTime > 23) {
-      this.setState({
-        inHourTime: (val + hourTime) % 24,
-      });
+    if (eval(hourTime + val) < 0) {
+      this.setState(
+        {
+          inHourTime: eval(24 + eval(hourTime + val)),
+        },
+        this.validateTime
+      );
+    } else if (eval(hourTime + val) > 23) {
+      this.setState(
+        {
+          inHourTime: eval((hourTime + val) % 24),
+        },
+        this.validateTime
+      );
     } else {
-      this.setState({
-        inHourTime: val + hourTime,
-      });
+      this.setState(
+        {
+          inHourTime: eval(hourTime + val),
+        },
+        this.validateTime
+      );
     }
   };
 
@@ -178,7 +211,7 @@ class ClockScreen extends Component {
           <Row>
             <Col></Col>
             <Col>
-              <Form inline>
+              <Form inline className="mainform">
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Set United States time</Form.Label>
                   <Form.Control
@@ -188,7 +221,7 @@ class ClockScreen extends Component {
                     min="0"
                     max="23"
                     step="1"
-                  />
+                  />{" "}
                   :
                   <Form.Control
                     className="timeinput"
@@ -197,7 +230,7 @@ class ClockScreen extends Component {
                     min="0"
                     max="59"
                     step="1"
-                  />
+                  />{" "}
                   :
                   <Form.Control
                     className="timeinput"
@@ -209,27 +242,18 @@ class ClockScreen extends Component {
                   />
                 </Form.Group>
               </Form>
-
-              <div>
-                United States:{" "}
-                <h4>
-                  {hourTime}:{minTime}:{secTime}
-                </h4>
+              <div id="clockbox">
+                <span className="countryclocks">
+                  United States: {hourTime}:{minTime}:{secTime}
+                </span>
+                <span className="countryclocks">
+                  London: {lnHourTime}:{minTime}:{secTime}
+                </span>
+                <span className="countryclocks">
+                  India: {inHourTime}:{minTime}:{secTime}
+                </span>
               </div>
-              <div>
-                London:{" "}
-                <h4>
-                  {lnHourTime}:{minTime}:{secTime}
-                </h4>
-              </div>
-              <div>
-                India:{" "}
-                <h4>
-                  {inHourTime}:{minTime}:{secTime}
-                </h4>
-              </div>
-
-              <Form>
+              <Form className="diffform">
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Time difference for LONDON:</Form.Label>
                   <Form.Control

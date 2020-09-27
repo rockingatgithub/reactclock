@@ -9,4 +9,22 @@ body {
 
 .timeinput {
   width: 66px !important;
+  margin-left: 10px;
+}
+
+#clockbox {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.diffform {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.mainform {
+  margin-top: 20px;
+  font-size: 18px;
 }
