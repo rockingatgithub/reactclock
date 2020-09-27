@@ -127,16 +127,25 @@ class App extends Component {
                     />
                   </Form.Group>
                   <Col>
-                    <Button variant="primary" onClick={this.signInHandler}>
+                    <Button
+                      variant="primary"
+                      onClick={this.signInHandler}
+                      style={{ marginLeft: "5px", marginTop: "5px" }}
+                    >
                       Signin
                     </Button>
-                    <Button variant="primary" onClick={this.signUpHandler}>
+                    <Button
+                      variant="primary"
+                      onClick={this.signUpHandler}
+                      style={{ marginLeft: "5px", marginTop: "5px" }}
+                    >
                       Signup
                     </Button>
                     <Button
                       variant="primary"
                       type="reset"
                       onClick={this.resetHandler}
+                      style={{ marginLeft: "5px", marginTop: "5px" }}
                     >
                       Reset
                     </Button>
