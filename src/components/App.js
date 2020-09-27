@@ -101,8 +101,8 @@ class App extends Component {
         {isLoggedOut && (
           <Container>
             <Row>
-              <Col></Col>
-              <Col>
+              <Col lg={3} md={2} sm={0}></Col>
+              <Col lg={6} md={8} sm={12}>
                 <Form>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Username/Email address</Form.Label>
@@ -152,7 +152,7 @@ class App extends Component {
                   </Col>
                 </Form>
               </Col>
-              <Col></Col>
+              <Col lg={3} md={2} sm={0}></Col>
             </Row>
           </Container>
         )}

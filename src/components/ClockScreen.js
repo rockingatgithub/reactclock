@@ -19,6 +19,38 @@ class ClockScreen extends Component {
     };
   }
 
+  componentDidMount = () => {
+    setInterval(() => {
+      this.increaseTime();
+    }, 5000);
+  };
+
+  increaseTime = () => {
+    const { secTime, minTime, hourTime } = this.state;
+    if (secTime + 5 < 60) {
+      this.setState((prevState) => ({
+        secTime: prevState.secTime + 5,
+      }));
+    } else if (minTime + 1 < 60) {
+      this.setState((prevState) => ({
+        minTime: prevState.minTime + 1,
+        secTime: 0,
+      }));
+    } else if (hourTime + 1 < 60) {
+      this.setState((prevState) => ({
+        minTime: 0,
+        hourTime: prevState.hourTime + 1,
+        secTime: 0,
+      }));
+    } else {
+      this.setState((prevState) => ({
+        minTime: 1,
+        hourTime: 1,
+        secTime: 1,
+      }));
+    }
+  };
+
   setHour = (e) => {
     this.setState(
       {
@@ -209,8 +241,8 @@ class ClockScreen extends Component {
       <div>
         <Container>
           <Row>
-            <Col></Col>
-            <Col>
+            <Col lg={3} md={2} sm={0}></Col>
+            <Col lg={6} md={8} sm={12}>
               <Form inline className="mainform">
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Set United States time</Form.Label>
@@ -276,7 +308,7 @@ class ClockScreen extends Component {
                 </Form.Group>
               </Form>
             </Col>
-            <Col></Col>
+            <Col lg={3} md={2} sm={0}></Col>
           </Row>
         </Container>
       </div>
