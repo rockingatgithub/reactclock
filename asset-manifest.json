@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reactclock/static/css/main.791a13e3.chunk.css",
-    "main.js": "/reactclock/static/js/main.9fcde605.chunk.js",
-    "main.js.map": "/reactclock/static/js/main.9fcde605.chunk.js.map",
+    "main.js": "/reactclock/static/js/main.1ce0ef4d.chunk.js",
+    "main.js.map": "/reactclock/static/js/main.1ce0ef4d.chunk.js.map",
     "runtime-main.js": "/reactclock/static/js/runtime-main.ab02a06e.js",
     "runtime-main.js.map": "/reactclock/static/js/runtime-main.ab02a06e.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/reactclock/static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.947c3d22.chunk.js": "/reactclock/static/js/2.947c3d22.chunk.js",
     "static/js/2.947c3d22.chunk.js.map": "/reactclock/static/js/2.947c3d22.chunk.js.map",
     "index.html": "/reactclock/index.html",
-    "precache-manifest.97092cfe86075dcd0ebaab4a08e524db.js": "/reactclock/precache-manifest.97092cfe86075dcd0ebaab4a08e524db.js",
+    "precache-manifest.12d1288833aaf61ec0c123e6f64b9d3d.js": "/reactclock/precache-manifest.12d1288833aaf61ec0c123e6f64b9d3d.js",
     "service-worker.js": "/reactclock/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/reactclock/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.791a13e3.chunk.css.map": "/reactclock/static/css/main.791a13e3.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.947c3d22.chunk.js",
     "static/css/main.791a13e3.chunk.css",
-    "static/js/main.9fcde605.chunk.js"
+    "static/js/main.1ce0ef4d.chunk.js"
   ]
 }
